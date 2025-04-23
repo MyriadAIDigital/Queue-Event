@@ -1,6 +1,6 @@
 import { app, InvocationContext, Timer } from "@azure/functions";
 import axios from "axios";
-export async function reTriggerCampaignWebhook(myTimer: Timer, context: InvocationContext): Promise<void> {
+export async function Queue(myTimer: Timer, context: InvocationContext): Promise<void> {
     const apiEndpoint = "https://myriadai-call-microservice-development.azurewebsites.net/queue/scheduleAsync";
 
     // Define the tenantIDs you want to trigger
@@ -34,8 +34,8 @@ export async function reTriggerCampaignWebhook(myTimer: Timer, context: Invocati
     }
 }
 
-app.timer('reTriggerCampaignWebhook', {
+app.timer('Queue', {
     // schedule: '0 0/30 * * * *',
     schedule: '0 * * * * *',
-    handler: reTriggerCampaignWebhook
+    handler: Queue
 });
