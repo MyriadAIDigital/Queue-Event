@@ -4,7 +4,7 @@ export async function Queue(myTimer: Timer, context: InvocationContext): Promise
     const apiEndpoint = "https://myriadai-call-microservice-development.azurewebsites.net/queue/scheduleAsync";
 
     // Define the tenantIDs you want to trigger
-    const tenantIDs = ["0001", "0002", "0003", "0004", "0005", "0006", "0007"];
+    const tenantIDs = ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008"];
 
     try {
         // Create an array of promises for each tenantID
