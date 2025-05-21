@@ -1,12 +1,13 @@
 import { app, InvocationContext, Timer } from "@azure/functions";
 import axios from "axios";
 export async function Queue(myTimer: Timer, context: InvocationContext): Promise<void> {
-    const apiEndpoint = "https://myriadai-call-microservice-development.azurewebsites.net/queue/scheduleAsync";
-
+    const apiEndpoint = process.env.API_ENDPOINT;
+    context.log(`POST request apiEndpoint ${apiEndpoint}`);
     // Define the tenantIDs you want to trigger
     const tenantIDs = ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008"];
 
     try {
+
         // Create an array of promises for each tenantID
         const requests = tenantIDs.map(tenantID => {
             const requestBody = {
