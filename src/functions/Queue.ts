@@ -37,6 +37,6 @@ export async function Queue(myTimer: Timer, context: InvocationContext): Promise
 
 app.timer('Queue', {
     // schedule: '0 0/30 * * * *',
-    schedule: '0 * * * * *',
+    schedule: '0 */1 * * * *',
     handler: Queue
 });
