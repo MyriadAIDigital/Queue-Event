@@ -4,7 +4,7 @@ export async function Queue(myTimer: Timer, context: InvocationContext): Promise
     const apiEndpoint = process.env.API_ENDPOINT;
     context.log(`POST request apiEndpoint ${apiEndpoint}`);
     // Define the tenantIDs you want to trigger
-    const tenantIDs = ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008"];
+    const tenantIDs = ["0001", "0002", "0003", "0004", "0005", "0006", "0007", "0008", "0009"];
 
     try {
 
